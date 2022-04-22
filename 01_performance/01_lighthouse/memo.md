@@ -1,0 +1,3 @@
+- start from measurement
+- find problem and fix
+- no fix before measurement

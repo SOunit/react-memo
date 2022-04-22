@@ -1,0 +1,2 @@
+- use `lazy` to avoid loading unused component
+- used with router is effective
