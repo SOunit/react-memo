@@ -1,19 +1,20 @@
-import { Grid, Paper, styled } from "@material-ui/core";
+import { Grid, Paper } from "@material-ui/core";
 import React from "react";
-
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-  height: 60,
-  lineHeight: "60px",
-  padding: "1rem 2rem",
-}));
 
 const GridItem = () => {
   return (
-    <Grid item>
-      <Item>Grid Item</Item>
+    <Grid item xs={12} sm={6} md={4}>
+      <Paper
+        style={{
+          height: "75px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        Grid Item
+      </Paper>
     </Grid>
   );
 };
