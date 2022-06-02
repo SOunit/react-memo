@@ -1,3 +1,8 @@
+# memo
+
+- just try samples.
+- not practical enough, header has no margin
+
 # url
 
 https://www.youtube.com/watch?v=vyJU9efvUtQ
