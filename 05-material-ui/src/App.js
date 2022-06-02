@@ -68,7 +68,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GridContainer />
-      {/* <Container maxWidth="lg">
+      <Container maxWidth="lg">
         <div className="App">
           <header className="App-header">
             <AppBar color="secondary">
@@ -155,7 +155,7 @@ function App() {
             <img src={logo} className="App-logo" alt="logo" />
           </header>
         </div>
-      </Container> */}
+      </Container>
     </ThemeProvider>
   );
 }
