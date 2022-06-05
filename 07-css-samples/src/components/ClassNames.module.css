@@ -1,0 +1,8 @@
+.base {
+  border: 3px rgb(224, 224, 224) solid;
+  padding: 1rem;
+}
+
+.base--active {
+  border-color: blue;
+}
