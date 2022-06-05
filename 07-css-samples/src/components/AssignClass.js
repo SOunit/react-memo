@@ -8,3 +8,5 @@ const AssignClass = (props) => {
 };
 
 export default AssignClass;
+
+// 1. get style from parent component using template literal
