@@ -1,0 +1,8 @@
+# ciccc url
+
+https://github.com/M-0921/react104
+
+# point
+
+- contextAPI uses FaaC pattern
+- Function as a Child is a pattern to reuse logic
