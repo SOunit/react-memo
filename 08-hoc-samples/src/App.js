@@ -1,5 +1,6 @@
 import HOC from "./modules/HOC/HOC";
 import CryptoTable from "./modules/HOC/CryptoTable";
+import PriceCSV from "./modules/HOC/PriceCSV";
 import "./App.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <HOC />
       <CryptoTable />
+      <PriceCSV />
     </div>
   );
 }
