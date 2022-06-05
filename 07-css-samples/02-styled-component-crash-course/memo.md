@@ -9,3 +9,4 @@ https://www.youtube.com/watch?v=02zO0hZmwnw
 - style for child element
 - hover
 - theme / theme provider
+- default style / button component
