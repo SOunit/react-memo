@@ -5,3 +5,4 @@
 - reuse logic
 - flexible render
 - same with hoc
+- ContextAPI uses this FaaC pattern
