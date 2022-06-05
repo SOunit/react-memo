@@ -6,6 +6,7 @@
 # points
 
 - Error Boundary とは、自身の子コンポーネントツリーで発生した JavaScript のエラーをキャッチ・記録しフォールバックの UI を表示するコンポーネントです
+- only class component
 - `componentDidCatch` - for log error information
 - `static getDerivedStateFromError` - for render a fallback UI after error was thrown
 
