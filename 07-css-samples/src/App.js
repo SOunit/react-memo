@@ -6,7 +6,8 @@ import classes from "./App.module.css";
 function App() {
   return (
     <div className="App">
-      <ArrayClass active />
+      <ArrayClass />
+
       <AssignClass
         classes={`${classes["setMargin"]} ${classes["setBorderRed"]}`}
       />
