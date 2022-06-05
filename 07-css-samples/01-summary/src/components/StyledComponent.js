@@ -4,15 +4,17 @@ import styled from "styled-components";
 const StyledBox = styled("div")`
   padding: 1rem;
   border: 3px solid grey;
-  background-color: yellow;
+  background-color: ${(props) => props.backgroundColor};
   cursor: pointer;
-  :hover {
+  &:hover {
     background-color: pink;
   }
 `;
 
-const StyledComponent = () => {
-  return <StyledBox>StyledComponent</StyledBox>;
+const StyledComponent = ({ backgroundColor }) => {
+  return (
+    <StyledBox backgroundColor={backgroundColor}>StyledComponent</StyledBox>
+  );
 };
 
 export default StyledComponent;

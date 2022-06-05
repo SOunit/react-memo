@@ -15,7 +15,8 @@ function App() {
       />
       <AssignClass />
       <ClassNames />
-      <StyledComponent />
+      <StyledComponent backgroundColor="yellow" />
+      <StyledComponent backgroundColor="purple" />
     </div>
   );
 }
