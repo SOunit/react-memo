@@ -5,6 +5,16 @@
 
 # steps
 
+- init storybook
+
 ```
 npx sb init
+```
+
+- check `.stories` / `src/stories` / `package.json`
+
+- run storybook
+
+```
+npm run storybook
 ```
