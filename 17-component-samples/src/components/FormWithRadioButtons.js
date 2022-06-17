@@ -11,6 +11,7 @@ const FormWithRadioButtons = () => {
         <input
           type="radio"
           name="gender"
+          value={isMale}
           onChange={() => {
             setIsMale(true);
           }}
@@ -21,6 +22,7 @@ const FormWithRadioButtons = () => {
         <input
           type="radio"
           name="gender"
+          value={isMale}
           onChange={() => {
             setIsMale(false);
           }}
