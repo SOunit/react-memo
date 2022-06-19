@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { io } from "socket.io-client";
 
 function App() {
+  // connect to backend server with socket port
+  const socket = io(`http://localhost:${process.env.REACT_APP_SOCKET_PORT}`);
+
+  socket.emit("custom-event", 10, "Hi", { a: "a" });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>SocketIoClient</h1>
     </div>
   );
 }
