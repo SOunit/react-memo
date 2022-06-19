@@ -12,7 +12,16 @@ const io = require("socket.io")(SOCKET_PORT, {
 });
 
 io.on("connection", (socket) => {
-  console.log(socket.id);
+  socket.emit("on-connect", { socketId: socket.id });
+
+  socket.on("custom-event", (num, str, obj) => {
+    // console.log("custom-event", num, str, obj);
+  });
+
+  socket.on("send-message", (message) => {
+    io.emit("receive-message", message);
+    console.log("send-message", message);
+  });
 });
 
 app.listen(PORT, () => {
