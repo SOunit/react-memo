@@ -1,4 +1,4 @@
-# 使い分け
+# 認証方法の使い分け
 
 https://gigazine.net/news/20201227-web-authentication-methods-compared/
 
