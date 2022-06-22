@@ -35,4 +35,12 @@
   - add `controls/select`
 
 - add checkbox component
+
   - convert `event.target.checked` to `event.target.value`
+
+- add date picker component
+  - install npm package
+    - install main (wrapper) package
+      - `npm i @material-ui/pickers`
+    - install dependency (date) package
+      - `npm i date-fns@next @date-io/date-fns`
