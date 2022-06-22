@@ -1,6 +1,16 @@
 import { useState } from "react";
+import { makeStyles } from "@mui/styles";
 
-const useForm = (initialFieldValues) => {
+const useStyle = makeStyles((theme) => ({
+  root: {
+    "& .MuiFormControl-root": {
+      width: "80%",
+      margin: theme.spacing(1),
+    },
+  },
+}));
+
+export const useForm = (initialFieldValues) => {
   const [values, setValues] = useState(initialFieldValues);
 
   const handleInputChange = (event) => {
@@ -12,4 +22,7 @@ const useForm = (initialFieldValues) => {
   return { values, handleInputChange };
 };
 
-export default useForm;
+export const Form = (props) => {
+  const classes = useStyle();
+  return <div className={classes.root}>{props.children}</div>;
+};

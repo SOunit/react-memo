@@ -1,15 +1,19 @@
 # steps
 
-- add makeStyle
+- add `makeStyle`
   ```
   npm i @mui/styles
   ```
-- add theme provider
+- add `theme provider`
 
 - create form
-  - form
-  - TextField
-  - Grid / container
-  - Grid / item
+  - `form`
+  - `TextField`
+  - `Grid / container`
+  - `Grid / item`
 - use paper
-  - Paper
+
+  - `Paper`
+
+- refactor
+  - add `useForm` hook

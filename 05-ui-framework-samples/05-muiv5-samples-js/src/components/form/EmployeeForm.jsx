@@ -2,17 +2,7 @@
 // https://www.youtube.com/watch?v=-XKaSCU0ZLM&t=11s
 
 import { Grid, TextField } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import useForm from "../../hooks/useForm";
-
-const useStyle = makeStyles((theme) => ({
-  root: {
-    "& .MuiFormControl-root": {
-      width: "80%",
-      margin: theme.spacing(1),
-    },
-  },
-}));
+import { useForm, Form } from "../../hooks/useForm";
 
 const initialFieldValues = {
   id: 0,
@@ -28,10 +18,9 @@ const initialFieldValues = {
 
 const EmployeeForm = () => {
   const { values, handleInputChange } = useForm(initialFieldValues);
-  const classes = useStyle();
 
   return (
-    <form className={classes.root}>
+    <Form>
       <Grid container>
         <Grid item xs={6}>
           <TextField
@@ -51,7 +40,7 @@ const EmployeeForm = () => {
         </Grid>
         <Grid item></Grid>
       </Grid>
-    </form>
+    </Form>
   );
 };
 
