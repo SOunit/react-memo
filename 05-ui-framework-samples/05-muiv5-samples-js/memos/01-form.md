@@ -31,4 +31,8 @@
   - add `controls/input`
 
 - add selector component
+
   - add `controls/select`
+
+- add checkbox component
+  - convert `event.target.checked` to `event.target.value`
