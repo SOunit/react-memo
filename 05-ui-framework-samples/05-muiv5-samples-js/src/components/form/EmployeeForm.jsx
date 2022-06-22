@@ -1,16 +1,10 @@
 // How to Design a Perfect React Material UI Form
 // https://www.youtube.com/watch?v=-XKaSCU0ZLM&t=11s
 
-import {
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Grid,
-  Radio,
-  RadioGroup,
-} from "@mui/material";
+import { Grid } from "@mui/material";
 import { useForm, Form } from "../../hooks/useForm";
 import Controls from "../controls/Controls";
+import * as employeeServices from "../../services/employeeService";
 
 const initialFieldValues = {
   id: 0,
@@ -58,6 +52,13 @@ const EmployeeForm = () => {
             value={values.gender}
             items={genderItems}
             onChange={handleInputChange}
+          />
+          <Controls.Select
+            name="departmentId"
+            label="Department"
+            value={values.departmentId}
+            onChange={handleInputChange}
+            options={employeeServices.getDepartmentCollection()}
           />
         </Grid>
       </Grid>
