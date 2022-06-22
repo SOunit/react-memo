@@ -3,6 +3,7 @@ import "./App.css";
 import EmployeeForm from "./components/form/EmployeeForm";
 import Header from "./components/header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
+import Employee from "./pages/Employee";
 
 const theme = createTheme();
 
@@ -13,10 +14,10 @@ function App() {
       <Routes>
         <Route path="/" element={<div className="App">/</div>} />
         <Route
-          path="/form"
+          path="/employee"
           element={
             <div className="App">
-              <EmployeeForm />
+              <Employee />
             </div>
           }
         />

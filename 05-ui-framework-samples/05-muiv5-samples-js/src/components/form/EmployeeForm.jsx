@@ -30,16 +30,30 @@ const EmployeeForm = () => {
   const [values, setValues] = useState(initialFieldValues);
   const classes = useStyle();
 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    setValues((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <form className={classes.root}>
       <Grid container>
         <Grid item xs={6}>
           <TextField
+            name="fullName"
             variant="outlined"
             label="Full Name"
             value={values.fullName}
+            onChange={handleInputChange}
           />
-          <TextField variant="outlined" label="Email" value={values.email} />
+          <TextField
+            name="email"
+            variant="outlined"
+            label="Email"
+            value={values.email}
+            onChange={handleInputChange}
+          />
         </Grid>
         <Grid item></Grid>
       </Grid>

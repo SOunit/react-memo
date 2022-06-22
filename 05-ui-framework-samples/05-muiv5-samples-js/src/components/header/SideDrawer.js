@@ -12,7 +12,7 @@ import {
 import MailIcon from "@mui/icons-material/Mail";
 
 const MENU_LIST = [
-  { title: "form", url: "/form", icon: <MailIcon /> },
+  { title: "employee", url: "/employee", icon: <MailIcon /> },
   { title: "b", url: "/b", icon: <MailIcon /> },
   { title: "c", url: "/c", icon: <MailIcon /> },
 ];
