@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import EmployeeForm from "./components/form/EmployeeForm";
 import Header from "./components/header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Employee from "./pages/Employee";

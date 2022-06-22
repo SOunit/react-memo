@@ -3,7 +3,7 @@
 
 import { Grid, TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { useState } from "react";
+import useForm from "../../hooks/useForm";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -27,14 +27,8 @@ const initialFieldValues = {
 };
 
 const EmployeeForm = () => {
-  const [values, setValues] = useState(initialFieldValues);
+  const { values, handleInputChange } = useForm(initialFieldValues);
   const classes = useStyle();
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-
-    setValues((prev) => ({ ...prev, [name]: value }));
-  };
 
   return (
     <form className={classes.root}>
