@@ -60,6 +60,12 @@ const EmployeeForm = () => {
             onChange={handleInputChange}
             options={employeeServices.getDepartmentCollection()}
           />
+          <Controls.Checkbox
+            name="isPermanent"
+            label="Permanent Employee"
+            value={values.isPermanent}
+            onChange={handleInputChange}
+          />
         </Grid>
       </Grid>
     </Form>
