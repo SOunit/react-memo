@@ -27,4 +27,8 @@
 - add radio button
 
 - refactor
+
   - add `controls/input`
+
+- add selector component
+  - add `controls/select`
