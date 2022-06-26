@@ -6,9 +6,9 @@ import tokenKeys from "../constants/token";
 import { useNavigate } from "react-router-dom";
 
 const formInitialValues = {
-  name: "",
-  email: "",
-  password: "",
+  name: "Jack",
+  email: "test@test.com",
+  password: "password",
 };
 
 const SignupForm = () => {

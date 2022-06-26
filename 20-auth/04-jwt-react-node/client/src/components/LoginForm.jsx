@@ -5,7 +5,7 @@ import useForm from "../hooks/useForm";
 import tokenKeys from "../constants/token";
 import { useNavigate } from "react-router-dom";
 
-const initialValues = { email: "", password: "" };
+const initialValues = { email: "test@test.com", password: "password" };
 
 const LoginForm = () => {
   const navigation = useNavigate();
