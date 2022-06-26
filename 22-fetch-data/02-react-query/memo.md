@@ -11,3 +11,13 @@ React Query Crash Course
   - fetch
   - cache
   - update
+
+# steps
+
+- add package
+
+```
+npm i react-query
+```
+
+- add unique key for caching

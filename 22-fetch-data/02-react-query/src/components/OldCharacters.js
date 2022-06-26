@@ -20,7 +20,7 @@ const OldCharacters = () => {
   return (
     <div>
       {characters.map((character) => (
-        <div>{character.name}</div>
+        <div key={character.id}>{character.name}</div>
       ))}
     </div>
   );
