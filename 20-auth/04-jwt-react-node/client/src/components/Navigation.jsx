@@ -15,7 +15,7 @@ const Navigation = () => {
         <NavLink to="/login" className="mr-3">
           Login
         </NavLink>
-        <NavLink to="/UserDetail" className="mr-3">
+        <NavLink to="/userDetail" className="mr-3">
           UserDetail
         </NavLink>
       </Toolbar>

@@ -17,7 +17,7 @@ app.post("/signup", (req, res) => {
   const newUser = req.body;
 
   // check db
-  const hasUser = users.find((user) => user.name === newUser.name);
+  const hasUser = users.find((user) => user.email === newUser.email);
   if (hasUser) {
     throw new Error("User exists");
   }
@@ -34,10 +34,24 @@ app.post("/signup", (req, res) => {
 });
 
 function generateAccessToken(user) {
-  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15s" });
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
 }
 
-app.post("/login", () => {});
+app.post("/login", (req, res) => {
+  const loginUser = req.body;
+
+  // check db
+  const hasUser = users.find((user) => user.email === loginUser.email);
+  if (!hasUser) {
+    throw new Error("User not exists");
+  }
+
+  // generate token
+  const accessToken = generateAccessToken(loginUser);
+  const refreshToken = jwt.sign(loginUser, process.env.REFRESH_TOKEN_SECRET);
+
+  res.json({ accessToken, refreshToken });
+});
 
 app.get("/", (req, res) => {
   res.json({ test: "hello" });

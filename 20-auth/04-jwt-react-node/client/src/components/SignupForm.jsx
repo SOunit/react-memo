@@ -40,7 +40,7 @@ const SignupForm = () => {
       localStorage.setItem(tokenKeys.ACCESS_TOKEN, accessToken);
       localStorage.setItem(tokenKeys.REFRESH_TOKEN, refreshToken);
 
-      navigation("/");
+      navigation("/userDetail");
     } catch (error) {
       console.log(error);
     }

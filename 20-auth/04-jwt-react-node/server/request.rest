@@ -4,3 +4,9 @@ Content-Type: application/json
 {"name": "Jack", "email": "test@test.com", "password": "password"}
 
 ###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{"email": "test@test.com", "password": "password"}
+
+###
