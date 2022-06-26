@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const Characters = () => {
+const OldCharacters = () => {
+  // FIXME:
+  // 1. add loading
+  // 2. add error handling
   const [characters, setCharacters] = useState([]);
 
   const fetchCharacters = async () => {
@@ -23,4 +26,4 @@ const Characters = () => {
   );
 };
 
-export default Characters;
+export default OldCharacters;

@@ -1,10 +1,10 @@
 import "./App.css";
-import Characters from "./components/Characters";
+import OldCharacters from "./components/OldCharacters";
 
 function App() {
   return (
     <div className="App">
-      <Characters />
+      <OldCharacters />
     </div>
   );
 }
