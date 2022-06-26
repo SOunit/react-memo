@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Box } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import { NavLink, Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -9,9 +9,12 @@ const Navigation = () => {
         <Link to="/" className="mr-10">
           LOGO
         </Link>
-        <Box>
-          <NavLink to="/signup">Signup</NavLink>
-        </Box>
+        <NavLink to="/signup" className="mr-3">
+          Signup
+        </NavLink>
+        <NavLink to="/login" className="mr-3">
+          Login
+        </NavLink>
       </Toolbar>
     </AppBar>
   );
