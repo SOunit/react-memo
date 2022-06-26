@@ -40,7 +40,7 @@ const UserDetail = () => {
           <p className="text-center">{user.email}</p>
         </div>
       ) : (
-        <p className="flex justify-center mt-5">No user found!</p>
+        <p className="flex justify-center mt-5">Please login first!</p>
       )}
     </div>
   );

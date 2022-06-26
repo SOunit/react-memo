@@ -4,3 +4,6 @@
 
 - add form sample
 - add validation sample
+
+- fetch best practice
+  - load, error
