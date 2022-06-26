@@ -16,6 +16,13 @@ const users = [];
 app.post("/signup", (req, res) => {
   const newUser = req.body;
 
+  console.log("newUser", newUser);
+
+  // check data
+  if (!newUser.name || !newUser.email || !newUser.password) {
+    throw new Error("name, email, password is required");
+  }
+
   // check db
   const hasUser = users.find((user) => user.email === newUser.email);
   if (hasUser) {
@@ -75,13 +82,15 @@ function authenticateToken(req, res, next) {
   }
 
   // verify token
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, userFromToken) => {
     if (err) {
       // you have token, but it is invalid
       return res.sendStatus(403);
     }
 
-    req.user = user;
+    const userData = users.find((user) => user.email === userFromToken.email);
+
+    req.user = userData;
     next();
   });
 }
