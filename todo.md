@@ -3,7 +3,8 @@
   - what is best practice?
 
 - add form sample
-- add validation sample
 
-- fetch best practice
-  - load, error
+  - validation sample
+
+- best approach in redux-toolkit
+  - useCreateThunk
