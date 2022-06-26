@@ -2,6 +2,8 @@ import React from "react";
 import { TextField, Button } from "@mui/material";
 import axios from "axios";
 import useForm from "../hooks/useForm";
+import tokenKeys from "../constants/token";
+import { useNavigate } from "react-router-dom";
 
 const formInitialValues = {
   name: "",
@@ -10,18 +12,38 @@ const formInitialValues = {
 };
 
 const SignupForm = () => {
+  const navigation = useNavigate();
+
   const { values, valuesChangeHandler } = useForm(formInitialValues);
   const { name, email, password } = values;
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
+
+    const data = {
+      name,
+      email,
+      password,
+    };
+
+    console.log("data", data);
+
     try {
-      axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-        name,
-        email,
-        password,
-      });
-    } catch (error) {}
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/signup`,
+        data
+      );
+      console.log("response", response);
+
+      const { accessToken, refreshToken } = response.data;
+
+      localStorage.setItem(tokenKeys.ACCESS_TOKEN, accessToken);
+      localStorage.setItem(tokenKeys.REFRESH_TOKEN, refreshToken);
+
+      navigation("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
