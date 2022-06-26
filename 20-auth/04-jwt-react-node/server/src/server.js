@@ -57,6 +57,35 @@ app.get("/", (req, res) => {
   res.json({ test: "hello" });
 });
 
+app.get("/user", authenticateToken, (req, res) => {
+  console.log("req.user", req.user);
+  res.json({ user: req.user });
+});
+
+function authenticateToken(req, res, next) {
+  // Bearer TOKEN
+  const authHeader = req.headers["authorization"];
+
+  // token = undefined or token
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (!token) {
+    // no token
+    return res.sendStatus(401);
+  }
+
+  // verify token
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) {
+      // you have token, but it is invalid
+      return res.sendStatus(403);
+    }
+
+    req.user = user;
+    next();
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`listen on port ${PORT}`);
 });

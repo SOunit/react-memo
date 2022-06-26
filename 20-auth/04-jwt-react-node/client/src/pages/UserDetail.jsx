@@ -9,22 +9,36 @@ const UserDetail = () => {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    try {
-      const token = localStorage.getItem(tokenKeys.ACCESS_TOKEN);
-      if (token) {
-        const response = axios.get(`${process.env.REACT_APP_BACKEND_URL}/user`);
-        const { user } = response.data;
-        setUser(user);
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem(tokenKeys.ACCESS_TOKEN);
+        if (token) {
+          const authAxios = axios.create({
+            baseURL: `${process.env.REACT_APP_BACKEND_URL}`,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          const response = await authAxios.get(`/user`);
+          const { user } = response.data;
+          setUser(user);
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
+    };
+
+    fetchUserData();
   }, [navigate]);
 
   return (
     <div>
       {user ? (
-        <p>{user.name}</p>
+        <div className="flex flex-col">
+          <h1 className="text-center">{user.name}</h1>
+          <p className="text-center">{user.email}</p>
+        </div>
       ) : (
         <p className="flex justify-center mt-5">No user found!</p>
       )}

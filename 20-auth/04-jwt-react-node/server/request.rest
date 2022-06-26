@@ -10,3 +10,8 @@ Content-Type: application/json
 {"email": "test@test.com", "password": "password"}
 
 ###
+
+GET http://localhost:5000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNjU2Mjc0NzYyLCJleHAiOjE2NTYyNzgzNjJ9.eb-rwD1tdgGl9tRoG2veDrs4MFmJYAFCgJqW3R1a4X0
+
+###
