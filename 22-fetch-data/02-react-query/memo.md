@@ -8,9 +8,13 @@ React Query Crash Course
   - HTTP
   - Graphql
 - functions
+
   - fetch
   - cache
   - update
+
+- `status === 'loading'` equals `isLoading`
+- `status === 'error'` equals `isError`
 
 # steps
 

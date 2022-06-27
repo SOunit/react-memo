@@ -8,12 +8,14 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <div className="App">
-      <h1>Without React Query</h1>
-      <OldCharacters />
-      <h1>With React Query</h1>
-      <QueryClientProvider client={queryClient}>
-        <Characters />
-      </QueryClientProvider>
+      <div className="container">
+        <h1>With React Query</h1>
+        <QueryClientProvider client={queryClient}>
+          <Characters />
+        </QueryClientProvider>
+      </div>
+      <h1>With Fetch API</h1>
+      {/* <OldCharacters /> */}
     </div>
   );
 }

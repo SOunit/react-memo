@@ -5,6 +5,7 @@
 - how to protect data? - verify token to get data - to get data, user needs authorize
 - token needs login - server always verify token before access to data
 - token has userInfo who login
+- token should be stored in cookie via http access
 
 # good refs
 
