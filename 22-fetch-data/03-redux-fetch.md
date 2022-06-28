@@ -1,0 +1,3 @@
+- rtk query is best approach
+  - react query in redux tool kit
+  - auto-setup in redux
