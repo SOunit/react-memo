@@ -22,7 +22,7 @@ const useAuth = () => {
     // generate expiration time
     const currentTime = new Date().getTime();
     const tokenExpirationDate =
-      expirationDate || new Date(currentTime + ONE_SECOND * 5);
+      expirationDate || new Date(currentTime + ONE_SECOND * 3);
 
     // save to storage
     localStorage.setItem(

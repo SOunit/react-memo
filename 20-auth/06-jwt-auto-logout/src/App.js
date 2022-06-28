@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>isLogin: {String(isLogin)}</h1>
+      {isLogin ? <h1>isLogin</h1> : <p>isLogout</p>}
       <button onClick={loginHandler}>Login</button>
       <button onClick={logoutHandler}>Logout</button>
     </div>
