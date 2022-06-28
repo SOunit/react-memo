@@ -1,3 +1,8 @@
+# url
+
+- Udemy, max, mern, auth section
+  https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/learn/lecture/16916242#overview
+
 # check / test
 
 - action - result
