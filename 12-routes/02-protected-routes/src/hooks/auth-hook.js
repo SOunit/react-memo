@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { ONE_SECOND } from "../constants/time";
+import { ONE_MIN, ONE_SECOND } from "../constants/time";
 
 // this stay outside of component because not related to re-render
 let logoutTimer;
