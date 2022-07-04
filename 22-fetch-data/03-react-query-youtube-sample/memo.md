@@ -27,3 +27,18 @@
 - try to fetch data in error
   - can configure
   - several times by default
+
+# points
+
+## reading data
+
+- track loading, error
+- retry 3 times by default!
+- cache!
+- refetching in background!
+  - show data from cache first for user experience
+  - fetch and refresh data in background
+
+## manipulating data
+
+-

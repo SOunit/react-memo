@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import * as api from "../services/usersApi";
 
-const Users = () => {
+const Users = ({ setUserId }) => {
   const { data, isLoading, isError, error } = useQuery("users", api.getUsers, {
     retry: false,
   });
@@ -19,7 +19,9 @@ const Users = () => {
     <div>
       <ul>
         {data?.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user.id}>
+            {user.name} <button onClick={() => setUserId(user.id)}>View</button>
+          </li>
         ))}
       </ul>
     </div>
