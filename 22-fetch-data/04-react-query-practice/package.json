@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "concurrently \"npm run client\"",
+    "watch": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm run watch --prefix server",
     "client": "npm start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
