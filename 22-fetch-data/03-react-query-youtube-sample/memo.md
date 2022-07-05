@@ -41,4 +41,9 @@
 
 ## manipulating data
 
--
+- get mutate to update data
+- update fetching data
+  - 1. fetch after update date
+    - add `onSuccess` as config
+    - easy approach but not always best
+  - 2. add optimistic updating
