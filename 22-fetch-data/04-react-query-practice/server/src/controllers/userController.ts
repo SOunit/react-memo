@@ -39,7 +39,7 @@ const userController = {
       .collection("users")
       .findOne({ _id: new ObjectId(userId) })
       .then((user) => {
-        res.json({ user });
+        res.json(user);
       })
       .catch((err) => {
         console.log(err);

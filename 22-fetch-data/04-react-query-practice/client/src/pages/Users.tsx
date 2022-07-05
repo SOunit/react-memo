@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import * as api from "../services/usersApi";
 import { User } from "../types/User.type";
 
@@ -19,7 +20,9 @@ const Users: FC<Props> = (props) => {
   return (
     <ul>
       {data?.map((user: User) => (
-        <li key={user._id}>{user.name}</li>
+        <li key={user._id}>
+          <Link to={`/users/${user._id}`}>{user.name}</Link>
+        </li>
       ))}
     </ul>
   );
