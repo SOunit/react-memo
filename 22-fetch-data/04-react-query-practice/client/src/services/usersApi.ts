@@ -15,6 +15,6 @@ export const updateUser = ({ id, ...updatedUser }: { id: string }) => {
   return api.put(`/users/${id}`, updatedUser).then((res) => res.data);
 };
 
-export const createUser = ({ id, ...newUser }: { id: string }) => {
+export const createUser = ({ ...newUser }) => {
   return api.post(`/users`, newUser).then((res) => res.data);
 };

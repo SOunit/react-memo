@@ -1,6 +1,8 @@
 import React from "react";
+import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import useForm from "../hooks/useForm";
+import * as api from "../services/usersApi";
 
 const initialFormState = {
   name: "",
@@ -12,11 +14,14 @@ const CreateUserForm = () => {
 
   const { values, valueChangeHandler } = useForm(initialFormState);
   const { name, age } = values;
+  //
+  const { mutate: createUser } = useMutation(api.createUser);
 
   const submitHandler: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     console.log("create user form submit");
     console.log("values", values);
+    createUser({ name, age });
 
     navigate("/users");
   };
