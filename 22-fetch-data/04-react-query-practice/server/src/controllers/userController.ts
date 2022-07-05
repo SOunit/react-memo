@@ -55,9 +55,7 @@ const userController = {
       .collection("users")
       .insertOne(newUser)
       .then((result) => {
-        res
-          .status(201)
-          .json({ message: "created user", userId: result.insertedId });
+        res.status(201).json({ ...newUser, _id: result.insertedId });
       })
       .catch((err) => {
         res.status(500).json({ message: "error in create user" });

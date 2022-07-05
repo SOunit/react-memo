@@ -1,8 +1,9 @@
 import React from "react";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import * as api from "../services/usersApi";
+import { User } from "../types/User.type";
 
 const initialFormState = {
   name: "",
@@ -14,8 +15,32 @@ const CreateUserForm = () => {
 
   const { values, valueChangeHandler } = useForm(initialFormState);
   const { name, age } = values;
-  //
-  const { mutate: createUser } = useMutation(api.createUser);
+
+  const queryClient = useQueryClient();
+  const {
+    mutate: createUser,
+    isError,
+    isLoading,
+    error,
+  } = useMutation(api.createUser, {
+    onSuccess: (data) => {
+      // pattern 1.
+      // - refetch data after mutation
+      // - create get request after mutation
+      // queryClient.invalidateQueries("users");
+      //
+      // pattern 2.
+      // - set data from backend
+      // - no get request
+      queryClient.setQueryData<User[]>("users", (oldQueryData) => {
+        if (oldQueryData) {
+          return [...oldQueryData, data];
+        } else {
+          return [data];
+        }
+      });
+    },
+  });
 
   const submitHandler: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();

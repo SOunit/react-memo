@@ -51,3 +51,5 @@ https://www.youtube.com/watch?v=aLQbVd-2tIo&t=2206s
     - add `onSuccess` as config
     - easy approach but not always best
   - 2. add optimistic updating
+    - add `queryClient.setQueryData(["users", user.id], data);` in `onSuccess`
+    - expect fetch data from backend
