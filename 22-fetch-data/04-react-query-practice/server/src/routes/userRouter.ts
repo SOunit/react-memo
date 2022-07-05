@@ -9,4 +9,4 @@ userRouter.get("/:userId", userController.getUser);
 userRouter.patch("/:userId", userController.updateUser);
 userRouter.delete("/:userId", userController.deleteUser);
 
-module.exports = userRouter;
+export default userRouter;

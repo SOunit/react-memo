@@ -23,7 +23,7 @@ const userController = {
       })
       .then((result) => {
         console.log("result", result);
-        res.json({ users });
+        res.json(users);
       })
       .catch((err) => {
         console.log(err);
