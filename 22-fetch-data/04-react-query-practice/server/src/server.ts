@@ -1,4 +1,5 @@
 import express from "express";
+import * as db from "./services/db.services";
 
 const app = express();
 
@@ -8,6 +9,12 @@ app.get("/", (req, res) => {
   res.json({ hello: "hello" });
 });
 
-app.listen(PORT, () => {
-  console.log(`listen on ${PORT}`);
+db.initDb((err, db) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(PORT, () => {
+      console.log(`listen on ${PORT}`);
+    });
+  }
 });
