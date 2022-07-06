@@ -1,5 +1,7 @@
 # error
 
+- error modal!!!
+  - check MERN app
 - add error handle sample
 
   - what is best practice?
