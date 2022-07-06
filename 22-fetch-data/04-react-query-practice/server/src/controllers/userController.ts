@@ -64,16 +64,18 @@ const userController = {
 
   updateUser: (req: Request, res: Response) => {
     const updatedUser = req.body;
+    const { name, age } = updatedUser;
     const { userId } = req.params;
 
     db.getDb()
       .db()
       .collection("users")
-      .updateOne({ _id: new ObjectId(userId) }, { $set: updatedUser })
+      .updateOne({ _id: new ObjectId(userId) }, { $set: { name, age } })
       .then((result) => {
-        res.status(201).json({ message: "updated user", userId });
+        res.status(201).json({ _id: userId, ...updatedUser });
       })
       .catch((err) => {
+        console.log(err);
         res.status(500).json({ message: "error in update user" });
       });
   },

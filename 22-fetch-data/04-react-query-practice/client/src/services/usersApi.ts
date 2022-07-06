@@ -12,7 +12,7 @@ export const getUser = (id: string) => {
 };
 
 export const updateUser = ({ id, ...updatedUser }: { id: string }) => {
-  return api.put(`/users/${id}`, updatedUser).then((res) => res.data);
+  return api.patch(`/users/${id}`, updatedUser).then((res) => res.data);
 };
 
 export const createUser = ({ ...newUser }) => {
