@@ -22,8 +22,13 @@ const Modal = (props) => {
           : "translate-y-[-5rem] -z-10 opacity-0"
       }`}
     >
-      <div>{title}</div>
-      <button onClick={closeModalHandler}>OK</button>
+      <div className="text-red-600">{title}</div>
+      <button
+        className="border-red-600 border-2 px-5 mt-5 text-red-600"
+        onClick={closeModalHandler}
+      >
+        OK
+      </button>
     </div>
   );
 };
