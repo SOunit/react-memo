@@ -15,16 +15,16 @@ const Modal = (props) => {
   };
 
   return (
-    <Backdrop className={isOpen ? "z-10" : "opacity-0 -z-10"}>
-      <div
-        className={`bg-white flex flex-col justify-center items-center h-32 w-32 ease-in ${
-          isOpen ? "translate-y-0 z-10" : "translate-y-[-15rem] -z-10"
-        }`}
-      >
-        <div>{title}</div>
-        <button onClick={closeModalHandler}>OK</button>
-      </div>
-    </Backdrop>
+    <div
+      className={`bg-white flex left-1/4 w-2/4 top-1/4 flex-col justify-center ease-out duration-500 fixed items-center h-32 ${
+        isOpen
+          ? "translate-y-0 z-20 opacity-100"
+          : "translate-y-[-5rem] -z-10 opacity-0"
+      }`}
+    >
+      <div>{title}</div>
+      <button onClick={closeModalHandler}>OK</button>
+    </div>
   );
 };
 

@@ -6,6 +6,7 @@ import Items from "./pages/Items";
 import Books from "./pages/Books";
 import { useSelector } from "react-redux";
 import Modal from "./components/Modal";
+import Backdrop from "./components/Backdrop";
 
 function App() {
   const { errorMessage } = useSelector((state) => state.error);
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Modal isOpen={!!errorMessage} title={errorMessage} />
+      <Backdrop className={!!errorMessage ? "z-10" : "opacity-0 -z-10"} />
       <Navigation />
       <Routes>
         <Route path="/users" element={<Users />} />
