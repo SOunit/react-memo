@@ -4,10 +4,17 @@ import Navigation from "./components/Navigation";
 import Users from "./pages/Users";
 import Items from "./pages/Items";
 import Books from "./pages/Books";
+import { useSelector } from "react-redux";
+import Modal from "./components/Modal";
 
 function App() {
+  const { errorMessage } = useSelector((state) => state.error);
+
+  console.log(errorMessage);
+
   return (
     <>
+      <Modal isOpen={!!errorMessage} title={errorMessage} />
       <Navigation />
       <Routes>
         <Route path="/users" element={<Users />} />
