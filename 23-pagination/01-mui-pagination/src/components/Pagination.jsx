@@ -6,25 +6,28 @@ import { productsActions } from "../store/productsSlice";
 
 const ITEMS_PER_PAGE = 3;
 
+const initialPaginationState = {
+  count: 0,
+  skip: 0,
+  limit: ITEMS_PER_PAGE,
+};
+
 const Pagination = () => {
   const dispatch = useDispatch();
-  const [pagination, setPagination] = useState({
-    count: 0,
-    skip: 0,
-    limit: ITEMS_PER_PAGE,
-  });
+  const [pagination, setPagination] = useState(initialPaginationState);
   const { count, skip, limit } = pagination;
 
   const fetchTestData = useCallback(async () => {
-    const data = await getData({ skip, limit });
+    const { data, count } = await getData({ skip, limit });
 
-    console.log(data);
-    dispatch(productsActions.setProducts(data.data));
+    // update products
+    dispatch(productsActions.setProducts(data));
 
-    setPagination((prevState) => ({ ...prevState, count: data.count }));
+    // update pagination state
+    setPagination((prevState) => ({ ...prevState, count }));
   }, [limit, skip, dispatch]);
 
-  const handlePageChange = (event, page) => {
+  const handlePageChange = (_, page) => {
     const skip = (page - 1) * ITEMS_PER_PAGE;
     const limit = skip + ITEMS_PER_PAGE;
 
@@ -43,6 +46,7 @@ const Pagination = () => {
       sx={{ m: "20px 0px" }}
     >
       <MuiPagination
+        color="primary"
         count={Math.ceil(count / ITEMS_PER_PAGE)}
         onChange={handlePageChange}
       />
