@@ -15,6 +15,11 @@ export const PRODUCTS = [
   { id: "p14", title: "p14" },
   { id: "p15", title: "p15" },
   { id: "p16", title: "p16" },
+  { id: "p17", title: "p17" },
+  { id: "p18", title: "p18" },
+  { id: "p19", title: "p19" },
+  { id: "p20", title: "p20" },
+  { id: "p21", title: "p21" },
 ];
 
 export const getData = ({ skip, limit }) => {
