@@ -1,11 +1,13 @@
+import { useSelector } from "react-redux";
 import "./App.css";
 import Pagination from "./components/Pagination";
-import { PRODUCTS } from "./data/data";
 
 function App() {
+  const { products } = useSelector((state) => state.products);
+
   return (
     <div className="App">
-      {PRODUCTS.map((product) => (
+      {products.map((product) => (
         <div key={product.id}>{product.title}</div>
       ))}
       <Pagination />

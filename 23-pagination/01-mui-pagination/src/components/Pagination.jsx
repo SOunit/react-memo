@@ -1,10 +1,13 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Box, Pagination as MuiPagination } from "@mui/material";
 import { getData } from "../data/data";
+import { useDispatch } from "react-redux";
+import { productsActions } from "../store/productsSlice";
 
 const ITEMS_PER_PAGE = 3;
 
 const Pagination = () => {
+  const dispatch = useDispatch();
   const [pagination, setPagination] = useState({
     count: 0,
     skip: 0,
@@ -16,9 +19,10 @@ const Pagination = () => {
     const data = await getData({ skip, limit });
 
     console.log(data);
+    dispatch(productsActions.setProducts(data.data));
 
     setPagination((prevState) => ({ ...prevState, count: data.count }));
-  }, [limit, skip]);
+  }, [limit, skip, dispatch]);
 
   const handlePageChange = (event, page) => {
     const skip = (page - 1) * ITEMS_PER_PAGE;
