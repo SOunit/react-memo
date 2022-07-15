@@ -3,6 +3,22 @@
 - Learn to Add Pagination to Your Website | Material UI
   https://www.youtube.com/watch?v=37xPlDBaA4A
 
+# summary
+
+- client
+
+  - pass `skip`, `limit` = `ITEMS_PER_PAGE` to backend
+  - receive `data`, `count` to show pagination
+  - use `Pagination` component in MUI-V5
+  - hold `pagination` state having `{skip, limit}`
+  - update `pagination` on `onChange` in `Pagination` component
+  - `setUseEffect` to `pagination` to refetch data on paginate
+
+- backend
+  - return 2 data
+    - `data` using `skip` and `limit`
+    - `count`
+
 # point
 
 - pagination fire fetching data
